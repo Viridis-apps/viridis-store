@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  samba-ps2:
+    image: dperson/samba:latest
+    container_name: ps2-samba_server_1
+    restart: always
+    environment:
+      - USERID=1000
+      - GROUPID=1000
+    volumes:
+      # Altere para a pasta on aponta direto para onde seus jogos já estão guardados, 
+      - /home/umbrel/umbrel/home/PS2SMB:/share
+    networks:
+      rede_opl:
+      # Altere para um IP livre em sua rede,
+        ipv4_address: 192.168.31.250
+    command: >
+      -g "server min protocol = NT1"
+      -g "server max protocol = NT1"
+      -g "lanman auth = yes"
+      -g "ntlm auth = yes"
+      -g "map to guest = Bad User"
+      -s "PS2SMB;/share;yes;no;yes;all;none;all;Umbrel PS2"
+
+networks:
+  rede_opl:
+    driver: macvlan
+    driver_opts:
+      parent: enp1s0f1  # Sua placa de rede identificada anteriormente
+    ipam:
+      config:
+        - subnet: 192.168.31.0/24
+          gateway: 192.168.31.1

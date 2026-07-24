@@ -1,0 +1,16 @@
+manifestVersion: 1
+id: ps2-samba
+name: OPL PS2 Samba
+version: "1.0.0"
+tagline: "Servidor Samba dedicado exclusivamente para carregar jogos no PS2 via OPL"
+description: >
+  Este aplicativo configura um servidor Samba isolado com suporte a SMBv1 (NT1)
+  e acesso Guest liberado para rodar seus jogos no PlayStation 2.
+developer: "Custom"
+website: "https://github.com"
+submitter: "Custom"
+submissionDate: "2026-07-24"
+icon: "https://githubusercontent.com"
+gallery: []
+category: "Storage"
+port: 445
