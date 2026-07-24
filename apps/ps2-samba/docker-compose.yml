@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  ps2-samba:
+    image: samba:latest
+    container_name: ps2-samba
+    ports:
+      - "139:139"
+      - "445:445"
+    volumes:
+      - ./shares:/shares
+    environment:
+      - SAMBA_PASSWORD=password

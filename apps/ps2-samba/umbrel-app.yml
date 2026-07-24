@@ -1,0 +1,5 @@
+# PS2 Samba App Configuration
+id: ps2-samba
+name: PS2 Samba
+description: Samba file sharing for PS2
+version: 1.0.0
