@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: ps2-samba
+id: viridis-ps2-samba
 name: OPL PS2 Samba
 version: "1.0.0"
 tagline: Servidor Samba para carregar jogos no PS2 via OPL
